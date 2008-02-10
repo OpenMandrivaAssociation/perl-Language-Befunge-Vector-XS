@@ -1,7 +1,7 @@
 
 %define realname   Language-Befunge-Vector-XS
 %define version    1.0.0
-%define release    %mkrel 1
+%define release    %mkrel 2
 
 Name:       perl-%{realname}
 Version:    %{version}
@@ -18,8 +18,8 @@ BuildRequires: perl(Test::More)
 
 
 %description
-The C<Language::Befunge> module makes heavy use of n-dims vectors,
-mapped to the C<Language::Befunge::Vector> class. This allows to
+The Language::Befunge module makes heavy use of n-dims vectors,
+mapped to the Language::Befunge::Vector class. This allows to
 abstract the funge dimension while still keeping the same code for the
 operations.
 
