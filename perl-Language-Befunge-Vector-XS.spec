@@ -1,7 +1,7 @@
 
 %define realname   Language-Befunge-Vector-XS
-%define version    1.0.0
-%define release    %mkrel 2
+%define version    1.1.0
+%define release    %mkrel 1
 
 Name:       perl-%{realname}
 Version:    %{version}
