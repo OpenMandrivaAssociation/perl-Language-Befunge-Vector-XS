@@ -1,21 +1,20 @@
+%define upstream_name    Language-Befunge-Vector-XS
+%define upstream_version 1.1.0
 
-%define realname   Language-Befunge-Vector-XS
-%define version    1.1.0
-%define release    %mkrel 2
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 3
 
-Name:       perl-%{realname}
-Version:    %{version}
-Release:    %{release}
-License:    GPL or Artistic
-Group:      Development/Perl
 Summary:    Language::Befunge::Vector rewritten for speed
-Source:     http://www.cpan.org/modules/by-module/Language/%{realname}-%{version}.tar.gz
-Url:        http://search.cpan.org/dist/%{realname}
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: perl-devel
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Language/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires: perl(Test::More)
+BuildRequires: perl-devel
 
-
+BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 The Language::Befunge module makes heavy use of n-dims vectors,
@@ -28,10 +27,8 @@ Therefore, this modules is basically a rewrite of LBV in XS. If
 installed, then LBV will automagically load it and replace its own
 functions with the XS ones.
 
-
-
 %prep
-%setup -q -n %{realname}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -52,6 +49,3 @@ rm -rf $RPM_BUILD_ROOT
 %doc LICENSE Changes META.yml README
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
-
-
