@@ -1,9 +1,9 @@
 %define upstream_name    Language-Befunge-Vector-XS
-%define upstream_version 1.1.0
+%define upstream_version 1.1.1
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 3
+Release:    %mkrel 1
 
 Summary:    Language::Befunge::Vector rewritten for speed
 License:    GPL+ or Artistic
