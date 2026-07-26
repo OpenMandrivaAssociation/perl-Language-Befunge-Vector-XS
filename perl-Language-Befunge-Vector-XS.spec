@@ -1,15 +1,13 @@
 %define upstream_name    Language-Befunge-Vector-XS
-%define upstream_version 1.1.1
-
 Name:       perl-%{upstream_name}
-Version:    %{upstream_version}
-Release:	6
+Version:    1.1.1
+Release:	7
 
 Summary:    Language::Befunge::Vector rewritten for speed
 License:    GPL+ or Artistic
 Group:      Development/Perl
 Url:        https://metacpan.org/dist/Language-Befunge-Vector-XS
-Source0:    https://cpan.metacpan.org/authors/id/J/JQ/JQUELIN/Language-Befunge-Vector-XS-%{upstream_version}.tar.gz
+Source0:    https://cpan.metacpan.org/authors/id/J/JQ/JQUELIN/Language-Befunge-Vector-XS-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires: perl(Test::More)
@@ -29,7 +27,7 @@ installed, then LBV will automagically load it and replace its own
 functions with the XS ones.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -67,9 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 
 * Fri Aug 21 2009 Jérôme Quelin <jquelin@mandriva.org> 1.1.0-3mdv2010.0
 + Revision: 418942
-- rebuild using %%perl_convert_version
-
-* Fri Aug 08 2008 Thierry Vignaud <tv@mandriva.org> 1.1.0-2mdv2009.0
+- rebuild using %1.1.1 Fri Aug 08 2008 Thierry Vignaud <tv@mandriva.org> 1.1.0-2mdv2009.0
 + Revision: 268537
 - rebuild early 2009.0 package (before pixel changes)
 
